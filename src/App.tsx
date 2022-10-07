@@ -26,9 +26,9 @@ export function App() {
     setViewMoreButton(true) // Bug Fix 6
 
     await employeeUtils.fetchAll()
+    setIsLoading(false) // Bug Fix 5
     await paginatedTransactionsUtils.fetchAll()
 
-    setIsLoading(false)
   }, [employeeUtils, paginatedTransactionsUtils, transactionsByEmployeeUtils])
 
   const loadTransactionsByEmployee = useCallback(
