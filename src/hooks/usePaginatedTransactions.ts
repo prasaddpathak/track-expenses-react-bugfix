@@ -25,8 +25,7 @@ export function usePaginatedTransactions(): PaginatedTransactionsResult {
           if (previousResponse === null) {
             return response
           }
-
-          return { data: response.data, nextPage: response.nextPage }
+          return { data: [...previousResponse.data, ...response.data], nextPage: response.nextPage } // Bug Fix 4
         })
       }),
     [customFetch, paginatedTransactions, wrappedRequest]
