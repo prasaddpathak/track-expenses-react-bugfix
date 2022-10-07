@@ -11,9 +11,7 @@ export const TransactionPane: TransactionPaneComponent = ({ transaction }) => {
     (newValue: boolean) => {
       fakeFetch<SuccessResponse>("setTransactionApproval", {
         transactionId: transaction.id,
-      })
-      console.log(newValue);
-      
+      })      
       setApproved(newValue)
     },
     [transaction.id]
